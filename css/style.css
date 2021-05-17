@@ -56,6 +56,7 @@ nav .logo {
     flex-direction: column;
     height: 18px;
     justify-content: space-between;
+    align-items: flex-end;
     position: relative;
     z-index: 99;
 }
@@ -73,8 +74,15 @@ nav .logo {
     transform-origin: 0 0;
 }
 
+.menu-toggle span:nth-child(3) {
+    transform-origin: 0 0;
+    width: 18px;
+}
+
 .menu-toggle span:nth-child(4) {
+    width: 12px;
     transform-origin: 0 100%;
+
 }
 
 .menu-toggle input {
@@ -98,6 +106,7 @@ nav .logo {
 
 .menu-toggle input:checked~span:nth-child(4) {
     transform: rotate(-45deg) translate(-1px, 0);
+    width: 25px;
     background-color: white;
 }
 
@@ -141,6 +150,38 @@ img {
     text-decoration: none;
 }
 
+/* Gallery */
+h2 {
+    margin: 20px 0;
+    padding: 50px 0 0 0;
+    text-align: center;
+    color: #005FAF;
+    font-size: 1.9em;
+}
+
+hr {
+    width: 150px;
+    height: 3px;
+    border: none;
+    margin: 0 auto;
+    background-color: rgb(245, 154, 17);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.container ul li {
+    list-style: none;
+}
+
+.container ul li img {
+    border: 1px solid black;
+    width: 100%;
+}
+
 
 /* responsive */
 @media screen and (max-width: 768px) {
@@ -172,6 +213,7 @@ img {
         transform: translatey(-100%);
         transition: all 0.8s;
         opacity: 0;
+        position: fixed;
     }
 
     nav ul li a {
@@ -187,5 +229,7 @@ img {
         display: flex;
     }
 
-
+    .main h1 {
+        font-size: 2.2em;
+    }
 }
