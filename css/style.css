@@ -21,6 +21,7 @@
 body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 18px;
+    overflow-x: hidden;
 }
 
 nav {
@@ -182,9 +183,119 @@ hr {
     width: 100%;
 }
 
+.gallery li {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery li span {
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgba(230, 181, 62, 0.8);
+    font-family: 'Montserrat Bold';
+    text-transform: uppercase;
+    color: white;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 300px;
+    transform: scale(0);
+}
+
+.gallery li:hover span {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .5s;
+}
+
+.overlay .card {
+    border-radius: 14px;
+    width: 40%;
+    height: 80%;
+    background-color: #fff;
+    margin: 70px auto;
+}
+
+.overlay:target {
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay:target .card {
+    animation: zoomfade .5s;
+}
+
+
+/* Skill */
+.section-skill {
+    background-color: #E7F4FF;
+    box-sizing: border-box;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.section-skill span {
+    font-size: 1.3em;
+    font-family: 'Montserrat Medium', Arial, Helvetica, sans-serif;
+}
+
+.section-skill .text-2 {
+    color: #005FAF;
+}
+
+.skill {
+    width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 175px));
+    justify-items: center;
+}
+
+/* Footer */
+footer {
+    background-color: #005295;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.7em;
+}
+
+footer span {
+    color: rgb(192, 192, 192);
+}
+
+footer .made {
+    color: #E6B53E;
+    font-family: 'Montserrat Medium';
+}
+
+/* Animation */
+@keyframes zoomfade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 /* responsive */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     nav ul {
         width: 50%;
     }
@@ -201,6 +312,10 @@ hr {
 
     .container {
         justify-items: center;
+    }
+
+    .gallery li span {
+        bottom: 50px;
     }
 }
 
@@ -241,5 +356,14 @@ hr {
 
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0px;
+    }
+
+    .overlay .card {
+        width: 90%;
+    }
+
+    .skill {
+        grid-template-columns: repeat(auto-fit, minmax(10px, 143px));
     }
 }
