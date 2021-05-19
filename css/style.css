@@ -220,12 +220,17 @@ hr {
     transition: .5s;
 }
 
-.overlay .card {
+.overlay:target .card {
     border-radius: 14px;
-    width: 40%;
-    height: 80%;
+    width: 35%;
+    height: 55%;
     background-color: #fff;
     margin: 70px auto;
+    display: grid;
+    justify-items: center;
+    padding-top: 10px;
+    grid-template-rows: 2fr, 1fr;
+    position: relative;
 }
 
 .overlay:target {
@@ -236,6 +241,63 @@ hr {
 
 .overlay:target .card {
     animation: zoomfade .5s;
+}
+
+.overlay img {
+    display: none;
+}
+
+.overlay .button-visit {
+    display: none;
+}
+
+.overlay .button-github {
+    display: none;
+}
+
+.overlay:target img {
+    display: block;
+}
+
+.overlay:target .button-visit {
+    display: inline-block;
+}
+
+.overlay:target .button-github {
+    display: inline-block;
+}
+
+.overlay:target img {
+    width: 80%;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+}
+
+.overlay:target .card .button-visit {
+    background-color: #005FAF;
+    height: 15px;
+    padding: 4px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.7em;
+}
+
+.overlay:target .card .button-github {
+    background-color: #E6B53E;
+    height: 15px;
+    padding: 4px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.card div {
+    position: absolute;
+    bottom: 10%;
 }
 
 
@@ -317,6 +379,11 @@ footer .made {
     .gallery li span {
         bottom: 50px;
     }
+
+    .overlay:target .card {
+        width: 90%;
+        height: 40%;
+    }
 }
 
 @media screen and (max-width: 578px) {
@@ -357,10 +424,6 @@ footer .made {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 0px;
-    }
-
-    .overlay .card {
-        width: 90%;
     }
 
     .skill {
