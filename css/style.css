@@ -32,6 +32,7 @@ nav {
     color: #005FAF;
     align-items: center;
     padding: 0 20px;
+    padding-bottom: 80px;
 }
 
 nav ul {
@@ -119,11 +120,18 @@ nav .logo {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: center;
     justify-items: end;
+    padding-bottom: 60px;
 }
 
 img {
     display: block;
     width: 60%;
+}
+
+.main h5 {
+    color: #005FAF;
+    font-size: 1em;
+    margin-bottom: 5px;
 }
 
 .main h1 {
@@ -133,23 +141,73 @@ img {
 
 .main p {
     font-size: 0.8em;
-    margin: 10px 0;
+    margin: 25px 0 35px 0;
 }
 
 .main .button-hire {
     background-color: #005FAF;
     color: white;
     text-decoration: none;
-    padding: 8px 20px;
+    padding: 13px 33px;
     font-size: 0.7em;
     border-radius: 20px;
     text-transform: uppercase;
+    margin-right: 10px;
+    transition: ease-in-out 0.5s;
+}
+
+.main .button-hire:hover {
+    background-color: white;
+    border: 0.5px solid #005FAF;
+    color: #005FAF;
+    transform: scale(2);
 }
 
 .main .cv {
     font-size: 0.7em;
     color: #005FAF;
     text-decoration: none;
+}
+
+/* Service */
+.section-service {
+    background-color: #E7F4FF;
+    padding-bottom: 10px;
+}
+
+.section-service .service {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 50px 0;
+    justify-items: center;
+}
+
+.section-service .service .card {
+    background-color: #fff;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    justify-items: center;
+}
+
+.section-service .service .card img {
+    width: 70px;
+    margin-top: 30px;
+}
+
+.section-service .service .card .title {
+    text-transform: uppercase;
+    font-family: 'Montserrat Bold';
+    color: #005FAF;
+    font-size: 0.9em;
+    margin: 20px 0 10px 0;
+}
+
+.section-service .service .card p {
+    margin: 3px 15px 15px 15px;
+    text-align: center;
+    font-size: 0.6em;
 }
 
 /* Gallery */
@@ -376,8 +434,6 @@ footer .made {
         justify-items: center;
     }
 
-    div {}
-
     .gallery li span {
         bottom: 50px;
     }
@@ -385,6 +441,21 @@ footer .made {
     .overlay:target .card {
         width: 90%;
         height: 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-service .service {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-service .service .card {
+        width: 80%;
+    }
+
+    .section-service .service .card .title {
+        margin: 0 0 10px 0;
     }
 }
 
