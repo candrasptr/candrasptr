@@ -120,7 +120,6 @@ nav .logo {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: center;
     justify-items: end;
-    padding-bottom: 60px;
 }
 
 img {
@@ -170,45 +169,45 @@ img {
 }
 
 /* Service */
-.section-service {
-    background-color: #E7F4FF;
-    padding-bottom: 10px;
-}
-
-.section-service .service {
+.container-service {
+    width: 80%;
+    margin: 50px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 50px 0;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    align-items: center;
     justify-items: center;
 }
 
-.section-service .service .card {
-    background-color: #fff;
-    width: 200px;
-    border-radius: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    display: grid;
-    justify-items: center;
+h2 span {
+    color: #333;
 }
 
-.section-service .service .card img {
-    width: 70px;
-    margin-top: 30px;
-}
-
-.section-service .service .card .title {
-    text-transform: uppercase;
-    font-family: 'Montserrat Bold';
-    color: #005FAF;
-    font-size: 0.9em;
-    margin: 20px 0 10px 0;
-}
-
-.section-service .service .card p {
-    margin: 3px 15px 15px 15px;
+.item {
     text-align: center;
-    font-size: 0.6em;
 }
+
+.item img {
+    width: 350px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item h2 {
+    margin: 100px;
+}
+
+.item span {
+    font-size: 0.8em;
+}
+
+.item:nth-child(2) {
+    margin-top: 200px;
+}
+
+.item:nth-child(3) {
+    margin-left: 300px;
+}
+
 
 /* Gallery */
 h2 {
